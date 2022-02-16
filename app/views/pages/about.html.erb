@@ -1,0 +1,15 @@
+<h1>Hello world!</h1>
+<p>The time is <%= Time.now %></p>
+
+<form action="/about" method="get">
+  <input type="text" name="member" value="<%= params[:member] %>" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+<% @members.each do |member| %>
+  <ul>
+    <li>Name: - <strong><%= member.capitalize %></strong></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Our contact', contact_path %>
